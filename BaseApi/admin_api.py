@@ -8,17 +8,18 @@ from Utils import utils
 '''
 admin_token = utils.Utils.read_environment()["admin_token"]
 host = "https://test-codecamp-teaching-system.codemao.cn"
-headers = {"authorization": admin_token}
+headers = {"Cookie": admin_token}
 
 
-class Package():
+class Admin():
 
     '''
     创建新的课程
-    :param:课程名称
-    :param：
-    :param：
-
+    :param:neme 课程名称
+    :param:previewUrl 课程预览图片
+    :param:editorType 编辑器类型（1：nemo 2 python）
+    :param:classType 课程内容类型 (1:编程课)
+    :param:description 课程描述
     '''
     def creat_newcourse(self,name="自动化创新课",
                         previewUrl="https://dev-cdn-common.codemao.cn/dev/607/16316767178381.png",
@@ -36,7 +37,9 @@ class Package():
                           "description":description
                       },headers=headers)
 
-    #查看课程列表
+    '''
+    查看课程列表 
+    '''
     def course_list(self,**kwargs):
         return requests.get(url="https://test-codecamp-admin.codemao.cn/admin/v2/courses?page=1&limit=10",
                             params={
@@ -47,10 +50,5 @@ class Package():
 
 
 
-if __name__=="__main__":
-    Package().creat_newcourse()
-    print(Package().course_list().status_code)
-    print(Package().course_list().request.headers)
-    print(Package().course_list().json())
 
 

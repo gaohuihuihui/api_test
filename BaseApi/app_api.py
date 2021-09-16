@@ -4,7 +4,7 @@ import requests
 host= "https://test-gateway.codemao.cn/codemao-app-web"
 
 
-class User():
+class App():
     def get_usercodev2(self):
         token = ""
         headers = {
@@ -17,13 +17,3 @@ class User():
 
         return requests.get(url=host + "/user/userCodeV2",
                      params={"userId": userId},)
-
-
-
-
-
-
-
-
-
-
