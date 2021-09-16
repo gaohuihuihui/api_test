@@ -11,6 +11,8 @@ base_path=os.path.dirname(os.path.dirname(__file__))
 environment_path=os.path.join(base_path,"config","environment.yaml")
 db_path=os.path.join(base_path,"config","db.yaml")
 redis_path=os.path.join(base_path,"config","redis.yaml")
+user_path=os.path.join(base_path,"config","user.yaml")
+
 
 '''
 读取绝对路径下yaml配置文件
@@ -35,9 +37,16 @@ def read_environment():
 def read_redis():
     return yaml.safe_load(open(redis_path))
 
-#
-# if __name__=="__main__":
-#     # print(read_db())
-#     # print(read_environment())
-#     # print(read_redis())
-#     print(read_yaml(file=environment_path))
+'''
+读取用户相关的所有配置
+'''
+def read_user():
+    return yaml.safe_load(open(user_path))
+
+
+if __name__=="__main__":
+    print(read_db())
+    print(read_environment())
+    print(read_redis())
+    print(read_yaml(file=environment_path))
+    print(read_user())
