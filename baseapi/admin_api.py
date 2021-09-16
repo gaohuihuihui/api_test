@@ -1,6 +1,6 @@
 import requests
 import json
-from Utils import utils
+from common import utils
 
 
 '''
@@ -12,7 +12,6 @@ headers = {"Cookie": admin_token}
 
 
 class Admin():
-
     '''
     创建新的课程
     :param:neme 课程名称

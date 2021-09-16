@@ -1,0 +1,26 @@
+test:
+  #录播课数据库
+  codecmap:
+    host: rm-bp15t47j196je1u0l906.mysql.rds.aliyuncs.com
+    user: TestDep
+    password: 4Ehp1ndpfnlN9D0qvg4SZuig
+    database: codecamp
+
+  #平台信息化数据库
+  platform:
+    host: rm-bp1orqjl80dle29ur878.mysql.rds.aliyuncs.com
+    user: nieyayun_test
+    password: svKvQhubwjYXErJIaXqvvCXiZijIL3K2
+    database: account
+
+  #编程猫数据库
+  codemao:
+    host: rm-bp1326x2083c1021v.mysql.rds.aliyuncs.com
+    user: test_all
+    password: Mfi38IHf4hGHGh
+    database: codemao_app
+
+
+
+
+

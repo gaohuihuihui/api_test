@@ -1,0 +1,17 @@
+#不同项目在不同环境下的域名，其中"defalut"用于控制默认环境
+
+codemao_app_api_host:
+  test: https://test-gateway.codemao.cn/codemao-app-web
+  staging: https://staging-gateway.codemao.cn/codemao-app-web
+  prod: https://gateway.codemao.cn/codemao-app-web
+admin_api_host:
+  test: https://test-codecamp-teaching-system.codemao.cn
+  staging: https://staging-codecamp-teaching-system.codemao.cn
+  prod: https://codecamp-teaching-system.codemao.cn
+account_api_host:
+  test: https://test-api.codemao.cn
+  staging: https://test-api.codemao.cn
+  prod: https://api.codemao.cn
+
+
+dafalut: test

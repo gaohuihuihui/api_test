@@ -1,0 +1,11 @@
+test:
+  host: r-bp1a97853b5914d4289.redis.rds.aliyuncs.com
+  password: 1dVIrGV24PcgOELF5rNphq1L
+
+staging:
+  host: r-bp1eeeb51fc1af04.redis.rds.aliyuncs.com
+  password: 5myAJrYGgJYSGiSrhgGdcsJp
+
+press:
+  host: r-bp1121c34842c834470.redis.rds.aliyuncs.com
+  password: skD87d718RcuJBnDyvBbM9xx
