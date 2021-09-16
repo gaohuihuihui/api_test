@@ -1,0 +1,16 @@
+codemao_app_web_host:
+  test: "https://test-gateway.codemao.cn/codemao-app-web"
+  staging: "https://staging-gateway.codemao.cn/codemao-app-web"
+  prod: "https://gateway.codemao.cn/codemao-app-web"
+codecamp_teaching_system_host:
+  test: "https://test-codecamp-teaching-system.codemao.cn"
+  staging: "https://staging-codecamp-teaching-system.codemao.cn"
+  prod: "https://codecamp-teaching-system.codemao.cn"
+
+platform_host:
+  test: "https://test-api.codemao.cn"
+  staging:
+  prod:
+
+admin_token: "Bearer+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjE0NzA1LCJpYXQiOjE2MzE3NTQ2NTAsImp0aSI6ImZjYzNjZTIyLTE2Y2QtMTFlYy04YmJkLTZkNTg1NmJhYTUwYiJ9.p8cId14h50eXJN74dn-N9-IE-Zm0KAbkQVf2Cu8aZiw"
+dafalut: "test"

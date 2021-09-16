@@ -1,35 +1,56 @@
 import requests
 import json
+from Utils import utils
+
+
+'''
+设置接口的一些公共属性
+'''
+admin_token = utils.Utils.read_environment()["admin_token"]
+host = "https://test-codecamp-teaching-system.codemao.cn"
+headers = {"authorization": admin_token}
+
 
 class Package():
-    def creat_newcourse(self):
-        host = "https://test-codecamp-teaching-system.codemao.cn/ty-courses/base"
-        name = "建课"
-        previewUrl = "https://dev-cdn-common.codemao.cn/dev/607/16316767178381.png"
-        editorType = 1
-        classType = 1
-        description = "自动建课"
-        headers = {
-            'Content-Type': 'application/json',
-            'Authorization': "Bearer+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjc0MzEsImlhdCI6MTYzMTY0NDgzMCwianRpIjoiNGIxZDRjMTEtMTVjZS0xMWVjLThiYmQtNmQ1ODU2YmFhNTBiIn0.5luB1_fhsstHBd5ZNT_8JHagOTevZyLK3ZMUYsG54YM"
-        }
-        data = json.dumps({"name": name, "previewUrl": previewUrl, "editorType": editorType, "classType": classType,
-                               "description": description
-                               })
-        re=requests.request("POST",headers=headers,url=host,data=data)
-        return re.json()
 
+    '''
+    创建新的课程
+    :param:课程名称
+    :param：
+    :param：
 
+    '''
+    def creat_newcourse(self,name="自动化创新课",
+                        previewUrl="https://dev-cdn-common.codemao.cn/dev/607/16316767178381.png",
+                        editorType=1,
+                        classType=1,
 
-    def creat_package(self):
-        pass
+                        description="自动化",**kwargs):
 
-    def creat_chapter(self):
-        pass
+        return requests.post(url=host+"/ty-courses/base",
+                      json={
+                          "name":name,
+                          "previewUrl":previewUrl,
+                          "editorType":editorType,
+                          "classType":classType,
+                          "description":description
+                      },headers=headers)
 
-    def creat_chapter_course(self):
-        pass
+    #查看课程列表
+    def course_list(self,**kwargs):
+        return requests.get(url="https://test-codecamp-admin.codemao.cn/admin/v2/courses?page=1&limit=10",
+                            params={
+                                "page":1,
+                                "limit":10
+                            },headers=headers
+                            )
+
 
 
 if __name__=="__main__":
-    print(Package().creat_newcourse())
+    Package().creat_newcourse()
+    print(Package().course_list().status_code)
+    print(Package().course_list().request.headers)
+    print(Package().course_list().json())
+
+
