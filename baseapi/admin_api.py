@@ -25,7 +25,7 @@ class Admin():
                         editorType=1,
                         classType=1,
 
-                        description="自动化",**kwargs):
+                        description="自动化"):
 
         return requests.post(url=host+"/ty-courses/base",
                       json={
