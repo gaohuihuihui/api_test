@@ -1,0 +1,14 @@
+skus:
+  skuNumber: 210732140001,
+  skuName: 体验课9元
+  originalPrice: 1
+  discountedPrice: 1
+name: test
+packageId: 3428
+index: 1
+startTime: 1631808000
+endTime: 1632931200
+termBeginTime: 1633017600
+termFinishTime: 1664553600
+nextTermId: ""
+backgroundUrl: https://dev-cdn-common.codemao.cn/dev/442/1631959335758test.png

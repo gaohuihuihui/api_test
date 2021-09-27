@@ -1,0 +1,13 @@
+namePrefix: test
+lowerLimit: 100
+upperLimit: 200
+warnLimit: 180
+teachers: [13708]
+type: 1
+batch: 1
+performanceGroup: 2
+openingCeremonyTime: 0
+studyLectureTime: 0
+graduationAwardsTime: 0
+packageId: 3424
+termId: 10463

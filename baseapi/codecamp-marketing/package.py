@@ -18,7 +18,7 @@ def creat_package():
 
 if __name__=="__main__":
     print(creat_package())
-    # json={'code': 200, 'success': True, 'data': {'packageId': 3433}, 'msg': '操作成功', 'traceId': '22cb71f4b7104392acc217fe86574d35.155.16323060035462071'}
-    # print(json["data"]["packageId"])
+    # json={'code': 200, 'success': True, 'codecamp-marking': {'packageId': 3433}, 'msg': '操作成功', 'traceId': '22cb71f4b7104392acc217fe86574d35.155.16323060035462071'}
+    # print(json["codecamp-marking"]["packageId"])
 
 
