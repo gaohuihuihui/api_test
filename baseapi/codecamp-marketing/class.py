@@ -1,11 +1,10 @@
 import requests
 import json
-import utils
-
+from common import utils
 
 def creat_class(packageId,termId):
     url = "https://test-codecamp-marketing.codemao.cn/classes"
-    data= utils.read_yaml("classes.yaml")
+    data= utils.read_yaml("codecamp-marketing/classes.yaml")
     data["packageId"]=packageId
     data["termId"]=termId
     headers = {

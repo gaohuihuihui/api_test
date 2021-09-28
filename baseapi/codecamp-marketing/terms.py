@@ -1,11 +1,11 @@
 import requests
 import json
-import utils
+from common import utils
 
 def creat_terms(packageId):
 
     url = "https://test-codecamp-marketing.codemao.cn/terms"
-    data = utils.read_yaml("terms.yaml")
+    data = utils.read_yaml("codecamp-marketing/terms.yaml")
     data["packageId"]=packageId
 
     headers = {
