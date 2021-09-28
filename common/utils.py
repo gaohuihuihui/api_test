@@ -19,9 +19,6 @@ def read_yaml(filename):
 def get_date():
     return time.time()
 
-
-
-
 "获取配置的默认host环境"
 def get_dafalut_environment():
     return read_config.read_environment()["dafalut"]
@@ -29,7 +26,8 @@ def get_dafalut_environment():
 def get_app_token():
 
     pass
-def
+def get_admin_token():
+    pass
 
 
 if __name__=="__main__":
