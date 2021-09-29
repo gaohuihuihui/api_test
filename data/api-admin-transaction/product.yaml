@@ -2,21 +2,36 @@ category_number: '58'
 category_name: NCT官方课程
 type: 1
 department_number: '17'
-title: NCT官方课程
+title: NCT官方课程商品测试-自动化
 lesson_project: PYTHON
 subtitle: ''
-main_image_url: 'https://dev-cdn-common.codemao.cn/dev/257/1632710894653_test.png'
+terms_id: 2
+main_image_url: 'https://dev-cdn-common.codemao.cn/dev/257/1632911397289_test.png'
 small_image_url: ''
 main_video_url: ''
 icon_url: ''
 page_content: <p></p>
-channels:
-  - channel_code: CODEMAO_APP_IOS
-  - channel_code: CODEMAO_APP_ANDROID
 grade:
-  - grade_code: PRIMARY_SCHOOL_1
+  - grade_code: PRIMARY_SCHOOL_2
+  - grade_code: PRIMARY_SCHOOL_4
 section:
-  - section_code: SECTION_1
   - section_code: SECTION_2
-tags: ''
-sku: []
+tags: PYTHON
+sku:
+  - sku_name: 体验课9元
+    prices:
+      - currency: CNY
+        guide_price: '0.01'
+        lowest_price: '0.01'
+        original_price: '0.01'
+    materials:
+      - key: SU002207
+        material_number: SU002207
+        material_unit: 1
+        ratio: 1
+        name: 测试0802
+    attributes:
+      - id: 9
+        name: 课程包
+        value_id: 31
+        value_name: 体验课9元

@@ -1,14 +1,13 @@
 
 import requests
+from common import utils,read_config
 
-'''
-设置接口的一些公共属性
-'''
-
-host= "https://gateway.codemao.cn/codemao-app-web"
-token = ""
+env=utils.get_dafalut_environment()
+host=read_config.read_environment()[env]["codecamp-marketing_host"]
+token=read_config.read_environment()[env]["admin_token"]
 headers = {
-    'Authorization': token
+    "Cookie": token,
+    'Content-Type': 'application/json'
 }
 
 class CodemaoApp():

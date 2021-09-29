@@ -1,17 +1,22 @@
 import requests
 import json
-from common import utils
+from common import utils,read_config
 
 
 '''
 设置接口的一些公共属性
 '''
-admin_token = utils.Utils.read_environment()["admin_token"]
-host = "https://test-codecamp-teaching-system.codemao.cn"
-headers = {"Cookie": admin_token}
+
+env=utils.get_dafalut_environment()
+host=read_config.read_environment()[env]["codecamp-teaching_host"]
+token=read_config.read_environment()[env]["admin_token"]
+headers = {
+    "Cookie": token,
+    'Content-Type': 'application/json'
+}
 
 
-class Admin():
+class CourseAdmin():
     '''
     创建新的课程
     :param:neme 课程名称
