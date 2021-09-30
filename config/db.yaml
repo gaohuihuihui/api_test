@@ -14,7 +14,7 @@ test:
     database: account
 
   #编程猫数据库
-  codemao:
+  codemao_app:
     host: rm-bp1326x2083c1021v.mysql.rds.aliyuncs.com
     user: test_all
     password: Mfi38IHf4hGHGh

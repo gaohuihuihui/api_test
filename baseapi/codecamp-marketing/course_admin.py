@@ -16,7 +16,7 @@ headers = {
 }
 
 
-class CourseAdmin():
+class CourseAdmin(object):
     '''
     创建新的课程
     :param:neme 课程名称
@@ -52,7 +52,8 @@ class CourseAdmin():
                             },headers=headers
                             )
 
-
+if __name__ == "__main__":
+   pass
 
 
 
