@@ -15,7 +15,7 @@ class TermAdmin(object):
     def creat_terms(self,packageId):
 
         url = host+"/terms"
-        data = utils.read_yaml("codecamp-marketing/terms.yaml")
+        data = utils.read_yaml("codecamp_marketing/terms.yaml")
         data["packageId"]=packageId
         response = requests.request("POST", url, headers=headers, data=json.dumps(data))
 

@@ -1,27 +1,33 @@
 #不同项目在不同环境下的域名，其中"defalut"用于控制默认环境
 test:
-  codemao-app-web_host: https://test-gateway.codemao.cn/codemao-app-web
+  codemao-app-web_host: https://test-gateway.codemao.cn/codemao_app_web
   codecamp-teaching_host: https://test-codecamp-teaching-system.codemao.cn
   account_api_host: https://test-api.codemao.cn
-  api-admin-transaction_host: https://test-api-admin-transaction.codemao.cn
-  codecamp-marketing_host: https://test-codecamp-marketing.codemao.cn
+  api-admin-transaction_host: https://test-api_admin_transaction.codemao.cn
+  codecamp-marketing_host: https://test-codecamp_marketing.codemao.cn
   admin_token: __ca_uid_key__=2ec8d972-5ac5-4368-8d51-a359922a1fc6; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%221474512687%22%2C%22first_id%22%3A%2217c16a70c1a8-09d450a0b18cad8-455f6c-1296000-17c16a70c1b1d2%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_utm_source%22%3A%22bcmapp%22%2C%22%24latest_utm_content%22%3A%22qingke%22%2C%22%24latest_utm_term%22%3A%22homecard%22%7D%2C%22%24device_id%22%3A%2217c16a70c1a8-09d450a0b18cad8-455f6c-1296000-17c16a70c1b1d2%22%7D; staging_internal_account_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUb2tlbiIsImF1dGgiOiJST0xFX0FETUlOIiwibmFtZSI6IuiBguS6mui_kCIsImVuaWQiOjMwNzgsImlhdCI6MTYzMjkzMDY1NywianRpIjoiZjQxOWQ1MGQtN2Q0NS00NDIyLWIyNjctYjNlZTk5NDYwZGMzIn0.HO9_vyhKY3bdAxG5oYRVmw-Gltbr-yieH5R3lEY0_nk; staging-admin-authorization=Bearer+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjYyMDIsImlhdCI6MTYzMjkwMTg1NywianRpIjoiMDk5NjI4NGYtMjEzZC0xMWVjLTlhOTYtZGY2MTg2YmYxYmEwIn0.fLdQFK12NhRK36I0h94dt3YACqROndj5OGLGBu10HSw; internal_account_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUb2tlbiIsImF1dGgiOiJST0xFX0FETUlOIiwibmFtZSI6IumrmOmjnue6oiIsImVuaWQiOjQ2MTgsImlhdCI6MTYzMjczMTIyNSwianRpIjoiYTAxNWNmNmMtNGNmNC00MWQyLTkxMWEtZjE4NjNjODg3MDYzIn0.YFoKsKWZwl1agrYCXYZ5b1aa110MKF--qK0Q5N8F2ho; admin-authorization=Bearer+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjQzNTYsImlhdCI6MTYzMjcwMjQyNSwianRpIjoiYjI4NjU2NTQtMWY2Yy0xMWVjLWE4NGYtMjUzOTczYzk0YzNjIn0.XKAq75qOK39I6Ze1Tf3EF4fYsBUOd7mXdQhU3JVhk3Y; test-authorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDb2RlbWFvIEF1dGgiLCJ1c2VyX3R5cGUiOiJzdHVkZW50IiwiZGV2aWNlX2lkIjowLCJ1c2VyX2lkIjoxMDAwMTAyODEyLCJpc3MiOiJBdXRoIFNlcnZpY2UiLCJwaWQiOiI2NWVkQ1R5ZyIsImV4cCI6MTYzNjgxNTU5MywiaWF0IjoxNjMyOTI3NTkzLCJqdGkiOiI0MTJlYWM0MS0yMjhiLTQ0ZGUtODI2Yi02OWEyYTZjYmVkNzEifQ.7xmJFhUl3K_5v-JCcFdxAgiK4-fTJyC4zB01JwwlBO0; test_internal_account_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUb2tlbiIsImF1dGgiOiJST0xFX0FETUlOIiwibmFtZSI6IuiBguS6mui_kCIsImVuaWQiOjEwNSwiaWF0IjoxNjMyOTcwNTgzLCJqdGkiOiIwNTJmMmI0MC1kNDRjLTQ2MzItYTc3YS05ODgyOGY0OTgxNmEifQ.5i_W5zsfvUUaYoXNBVzOjpzJO5NpZYykxZYKWI61GB4; test-admin-authorization=Bearer+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjg3ODQsImlhdCI6MTYzMjk0MTc4MywianRpIjoiZmVmYzE5YTktMjE5OS0xMWVjLTlkZGYtZTllNTY0ZTNhNTEyIn0.gFiWWzv0o6nc0Et2nw7UKvEqVERJCsQJjTdrhRYk6hY
   app_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDb2RlbWFvIEF1dGgiLCJ1c2VyX3R5cGUiOiJzdHVkZW50IiwiZGV2aWNlX2lkIjowLCJ1c2VyX2lkIjoxMDAwMTAyODEyLCJpc3MiOiJBdXRoIFNlcnZpY2UiLCJwaWQiOiJCQ2hZdzJYUiIsImV4cCI6MTYzNjgxODU4NSwiaWF0IjoxNjMyOTMwNTg1LCJqdGkiOiI2Yjc1NTAxOS00OTVmLTQ4MzktYjBhNC0xM2JmODExM2MyNTUifQ.SZ2aWV8Kjx4tZOQADn_KEFL5h6DWFsElIZY_pOnjhMI
 
 staging:
-  codemao-app-web_host: https://staging-gateway.codemao.cn/codemao-app-web
+  codemao-app-web_host: https://staging-gateway.codemao.cn/codemao_app_web
   codecamp-teaching_host: https://staging-codecamp-teaching-system.codemao.cn
   account_api_host: https://staging-api.codemao.cn
-  api-admin-transaction_host: https://staging-api-admin-transaction.codemao.cn
-  codecamp-marketing_host: https://staging-codecamp-marketing.codemao.cn
+  api-admin-transaction_host: https://staging-api_admin_transaction.codemao.cn
+  codecamp-marketing_host: https://staging-codecamp_marketing.codemao.cn
+  admin_token:
+  app_token:
 
 
 prod:
-  codemao-app-web_host: https://gateway.codemao.cn/codemao-app-web
+  codemao-app-web_host: https://gateway.codemao.cn/codemao_app_web
   codecamp-teaching_host: https://codecamp-teaching-system.codemao.cn
   account_api_host: https://api.codemao.cn
-  api-admin-transaction_host: https://api-admin-transaction.codemao.cn
-  codecamp-marketing_host: https://codecamp-marketing.codemao.cn
+  api-admin-transaction_host: https://api_admin_transaction.codemao.cn
+  codecamp-marketing_host: https://codecamp_marketing.codemao.cn
+  admin_token:
+  app_token:
+
+
 
 
 

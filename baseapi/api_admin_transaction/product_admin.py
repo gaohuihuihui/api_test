@@ -30,7 +30,8 @@ class ProductAdmin(object):
 
     def creat_product(self):
         url = host+"/spu/product"
-        data= utils.read_yaml("api-admin-transaction/product.yaml")
+        data= utils.read_yaml("api_admin_transaction/product.yaml")
+        # data["title"]=utils.product_title(data)
         response = requests.request("POST", url, headers=headers, data=json.dumps(data))
         spuNumer=response.json()["data"]
 
@@ -43,9 +44,9 @@ class ProductAdmin(object):
 
         return (response,spuNumer)
 
-    def product_onsale(self,SpuNumer):
+    def product_onsale(self,spuNumer):
         data="{}"
-        url=host+"/spu/product/"+SpuNumer+"/review"
+        url=host+"/spu/product/"+spuNumer+"/review"
         response=requests.request("PATCH",url,headers=headers,data=data)
 
         logger.Logger.debug("请求的url: " + str(url))
@@ -57,10 +58,10 @@ class ProductAdmin(object):
 
 
     #商品审核
-    def product_spuAudit(self,SpuNumer):
+    def product_spuAudit(self,spuNumer):
 
         if env=="test":
-            url="https://dev-platform-test-tool.codemao.cn/api/spu/product/"+SpuNumer+"/audit/manual?auditPass=true"
+            url="https://dev-platform-test-tool.codemao.cn/api/spu/product/"+spuNumer+"/audit/manual?auditPass=true"
             headers = {
                 'Accept': 'application/json',
                 "Cookie": token,
@@ -77,35 +78,78 @@ class ProductAdmin(object):
         else:
             print("只能在测试环境对商品进行审核上架")
 
-    def product_notsale(self):
-        pass
+    def product_notsale(self,spuNumer):
 
 
+        url=host+"/spu/product/"+spuNumer+"/offsale"
+        data={"offsaleTime":utils.get_timestamp()}
 
+        response = requests.request("PATCH", url, headers=headers, data=json.dumps(data))
 
+        logger.Logger.debug("请求的url: " + str(url))
+        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求返回的状态码" + str(response.status_code))
 
+        return response
 
+    def delete_product(self,spuNumer):
+        url=host+"/spu/product/"+spuNumer
+        response = requests.request("DELETE", url, headers=headers)
 
+        logger.Logger.debug("请求的url: " + str(url))
+        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求返回的状态码" + str(response.status_code))
 
-
-
+        return response
 
 
 
 if __name__ == "__main__":
-        '''
-        自动创建商品并且提交审核后上架（仅在测试环境中使用）
-        '''
-        # productadmin = ProductAdmin()
-        # #step:创建一个商品
-        # spuNumer = productadmin.creat_product()[1]
-        # time.sleep(3)
-        # #提交商品审核
-        # productadmin.product_onsale(spuNumer)
-        # time.sleep(3)
-        # #商品上架
-        # productadmin.product_spuAudit(spuNumer)
-        #
+    productadmin = ProductAdmin()
+
+
+    '''
+    ********开始创建商品：自动创建商品并且提交审核后上架（仅在测试环境中使用）
+    '''
+    #step1:创建一个商品
+    # spuNumer = productadmin.creat_product()[1]
+    # time.sleep(5)
+    # #step2:提交商品审核
+    # productadmin.product_onsale(spuNumer)
+    # time.sleep(5)
+    # #step3:商品上架
+    # productadmin.product_spuAudit(spuNumer)
+    '''
+    ***********创建成功
+    '''
+
+    '''
+    下架并且删除一个作品
+    '''
+    # spuNumer="G217176140"
+    # productadmin.product_notsale(spuNumer)
+    # time.sleep(5)
+    # productadmin.delete_product(spuNumer)
+
+
+    '''
+    上架商品
+    '''
+    # productadmin.product_spuAudit("G210572140")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

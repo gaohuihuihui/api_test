@@ -14,7 +14,7 @@ class ClassAdmin(object):
 
     def creat_class(self,packageId,termId):
         url = host+"/classes"
-        data= utils.read_yaml("codecamp-marketing/classes.yaml")
+        data= utils.read_yaml("codecamp_marketing/classes.yaml")
         data["packageId"]=packageId
         data["termId"]=termId
         response = requests.request("POST", url, headers=headers, data=json.dumps(data))
@@ -25,8 +25,11 @@ class ClassAdmin(object):
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 
 
-        return  response.json()
+        return  response
 
 
 if __name__ == "__main__":
-   pass
+    classadmin=ClassAdmin()
+    classadmin.creat_class()
+
+

@@ -2,7 +2,6 @@ import pymysql
 from common import utils,read_config
 
 env=utils.get_dafalut_environment()
-
 codecmap=read_config.read_db()[env]["codecmap"]
 platform=read_config.read_db()[env]["platform"]
 codemao_app=read_config.read_db()[env]["codemao_app"]
