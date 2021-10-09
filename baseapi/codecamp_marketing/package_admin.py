@@ -3,6 +3,7 @@ import time
 import requests
 import json
 from common import utils,read_config,logger,mysql
+from baseapi import httpclient
 
 mysql=mysql.Mysql()
 
@@ -12,23 +13,16 @@ env=utils.get_dafalut_environment()
 host1=read_config.read_environment()[env]["codecamp-teaching_host"]
 host2=read_config.read_environment()[env]["codecamp-marketing_host"]
 
-token=read_config.read_environment()[env]["admin_token"]
-headers = {
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-    "Cookie": token,
-    'Content-Type': 'application/json;charset=utf-8'
 
-}
 
-class PackageAdmin(object):
+class PackageAdmin(httpclient.HttpClient):
 
     def get_packages(self):
         url=host2+"/packages/list-by-query?page=1&limit=10"
-        response=requests.request("GET",url,headers=headers)
+        response=requests.request("GET",url,headers=self.headers)
 
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 
@@ -44,10 +38,10 @@ class PackageAdmin(object):
 
         if data["name"]=="":     #如果课包名称为空，则按照某种规则组装一个package_name
             data["name"]=utils.packge_name(data)
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        response = requests.request("POST", url, headers=self.headers, data=json.dumps(data))
 
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:"+ str(response.json()))
 
@@ -62,10 +56,10 @@ class PackageAdmin(object):
 
         url=host1+"/packages/"+str(packageId)+"/chapters"
         data=utils.read_yaml("codecamp_marketing/chapter.yaml")
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        response = requests.request("POST", url, headers=self.headers, data=json.dumps(data))
 
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 
@@ -77,9 +71,9 @@ class PackageAdmin(object):
         url=host1+"/chapters/"+str(chapterId)+"/courses"
 
         data=utils.read_yaml("codecamp_marketing/chapter_course.yaml")
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        response = requests.request("POST", url, headers=self.headers, data=json.dumps(data))
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 
@@ -90,10 +84,10 @@ class PackageAdmin(object):
     def package_commodity(self,packageId):
         url = host1+"/packages/"+str(packageId)+"/commodity"
         data = utils.read_yaml("codecamp_marketing/package_commodity.yaml")
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        response = requests.request("POST", url, headers=self.headers, data=json.dumps(data))
 
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 
@@ -102,10 +96,10 @@ class PackageAdmin(object):
     def term_config(self,packageId):
         url = host1+"/packages/"+str(packageId)+"/term-config"
         data = utils.read_yaml("codecamp_marketing/term_config.yaml")
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        response = requests.request("POST", url, headers=self.headers, data=json.dumps(data))
 
         logger.Logger.debug("请求的url: " + str(url))
-        logger.Logger.debug("请求的header" + str(headers))
+        logger.Logger.debug("请求的header" + str(self.headers))
         logger.Logger.debug("请求返回的状态码" + str(response.status_code))
         logger.Logger.debug("返回的内容如下:" + str(response.json()))
 

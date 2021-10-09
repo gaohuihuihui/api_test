@@ -18,7 +18,7 @@ headers = {
 class Account(object):
 
 
-    def app_login(self,username=user["app"]["username"],password=user["app"]["password"]):
+    def app_login(self,username,password):
         url = host + "/tiger/v3/app/accounts/login"
         data={"identity":username,
               "password":password,
@@ -60,10 +60,11 @@ class Account(object):
 
 
 if __name__=="__main__":
+    user = read_config.read_user()[env]["app"]
 
 
     account=Account()
-    result=account.app_login()
+    result=account.app_login(username=user["username"],password=user["password"])
     token=result.cookies.values()[0]
     print(token)
 
