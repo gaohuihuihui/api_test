@@ -19,7 +19,7 @@ def get_dafalut_environment():
     return read_config.read_environment()["dafalut"]
 
 
-def product_title(data=read_yaml("api_admin_transaction/product.yaml")):
+def product_title(data=read_yaml("product.yaml")):
     gradecode = []
     for grade in data["grade"]:
         gradecode.append(grade["grade_code"])
@@ -70,7 +70,7 @@ def platformid_to_platform(platform):
     }
     return platforms.get(platform,None)
 
-def packge_name(data=read_yaml("codecamp_marketing/package.yaml")):
+def packge_name(data=read_yaml("package.yaml")):
     businessType = data["businessType"]
     attribute = data["attribute"]
     platform=data["platform"]

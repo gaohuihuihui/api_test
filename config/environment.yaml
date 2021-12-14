@@ -19,11 +19,13 @@ staging:
 
 
 prod:
-  codemao-app-web_host: https://gateway.codemao.cn/codemao-app-web
+  codemao_app_web_host: https://gateway.codemao.cn/codemao-app-web
   codecamp-teaching_host: https://codecamp-teaching-system.codemao.cn
   account_api_host: https://api.codemao.cn
-  api-admin-transaction_host: https://api-admin-transaction.codemao.cn
-  codecamp-marketing_host: https://codecamp-marketing.codemao.cn
+
+  open-service_host: https://open-service.codemao.cn
+  api_admin_transaction_host: https://api-admin-transaction.codemao.cn
+  codecamp_marketing_host: https://codecamp-marketing.codemao.cn
   admin_token:
   app_token:
 
@@ -32,4 +34,4 @@ prod:
 
 
 
-dafalut: test
+defalut: prod
