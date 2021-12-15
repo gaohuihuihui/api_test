@@ -1,9 +1,12 @@
+import sys
+
 import yaml
 import time
 import os
 from common import read_config
 
 basic_path=os.path.dirname(os.path.dirname(__file__))
+sys.path.append(basic_path)
 
 "返回当前时间戳"
 def get_timestamp():
@@ -16,7 +19,7 @@ def read_yaml(filename):
 
 "获取配置的默认host环境"
 def get_dafalut_environment():
-    return read_config.read_environment()["dafalut"]
+    return read_config.read_environment()["defalut"]
 
 
 def product_title(data=read_yaml("product.yaml")):
@@ -83,7 +86,8 @@ def packge_name(data=read_yaml("package.yaml")):
 
 
 if __name__ == "__main__":
-    print(packge_name())
+    print(basic_path)
+    print(sys.path)
 
 
 
